@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.raiffeisen.com/Schema1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:srv1="http://www.raiffeisen.com/Schema1">
+
+    <complexType name="AttributeType">
+    	<sequence>
+    		<element name="key" type="string"></element>
+    		<element name="value" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="AttributesType">
+    	<sequence>
+    		<element name="Attribute" type="srv1:AttributeType" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Service1RequestType">
+    	<sequence>
+    		<element name="item" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Service1ResponseType">
+    	<sequence>
+    		<element name="attributes" type="srv1:AttributesType" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Service1Request" type="srv1:Service1RequestType"></element>
+
+    <element name="Service1Response" type="srv1:Service1ResponseType"></element>
+</schema>
