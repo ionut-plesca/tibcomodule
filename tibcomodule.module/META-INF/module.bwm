@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:Fault="http://www.example.org/Fault" xmlns:Service="http://www.raiffeisen.com/Service/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:http="http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_qolv8CKFEeqSIdQZxX2zsQ" targetNamespace="http://tns.tibco.com/bw/composite/tibcomodule.module" name="tibcomodule.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_oncG0CKhEeqSIdQZxX2zsQ" name="Service" promote="ComponentProcess/Service">
+    <sca:interface.wsdl xmi:id="_oncG1CKhEeqSIdQZxX2zsQ" interface="http://www.raiffeisen.com/Service/#wsdl.interface(Service)" scaext:wsdlLocation="../Service%20Descriptors/Service.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_zzuuMCKjEeqSIdQZxX2zsQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/dff94c0c76734efc93e8195e1a70b881/SOAPServiceBinding" portTypeQName="Service:Service" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/tibcomodule.module/Service%20Descriptors/Service.wsdl">
+      <bindingType xmi:id="_z1LfsCKjEeqSIdQZxX2zsQ"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_248ysCKjEeqSIdQZxX2zsQ" endpointURI="/Service" httpConnector="tibcomodule.module.HTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_z1UCkCKjEeqSIdQZxX2zsQ" operationName="GetItems" action="GetItems" actionNeeded="true">
+        <bindingType xmi:id="_z1UCkSKjEeqSIdQZxX2zsQ"/>
+        <messageConfiguration xmi:id="_z1UCkiKjEeqSIdQZxX2zsQ" messageQName="Service:GetItemsRequest" wsdlLocation="platform:/resource/tibcomodule.module/Service%20Descriptors/Service.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_z1UCkyKjEeqSIdQZxX2zsQ" partName="parameters" partElementName="Service:request"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_z1UClCKjEeqSIdQZxX2zsQ" messageQName="Service:GetItemsResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/tibcomodule.module/Service%20Descriptors/Service.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_z1UClSKjEeqSIdQZxX2zsQ" partName="parameters" partElementName="Service:response"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_z1UCliKjEeqSIdQZxX2zsQ" messageQName="Service:GetItemsFault" messageDirection="FAULT" action="fault" wsdlLocation="platform:/resource/tibcomodule.module/Service%20Descriptors/Service.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_z1UClyKjEeqSIdQZxX2zsQ" partName="parameters" partElementName="Fault:Fault"/>
+        </messageConfiguration>
+        <context xmi:id="_z1VQsCKjEeqSIdQZxX2zsQ">
+          <inputMapping xmi:id="_z1We0CKjEeqSIdQZxX2zsQ"/>
+          <outputMapping xmi:id="_z1We0SKjEeqSIdQZxX2zsQ" direction="OUTPUT"/>
+          <faultMappings xmi:id="_z1XF4CKjEeqSIdQZxX2zsQ" direction="FAULT" faultName="fault"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_z1XF4SKjEeqSIdQZxX2zsQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_q16aQCKFEeqSIdQZxX2zsQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_q2BH8CKFEeqSIdQZxX2zsQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_q2EyUCKFEeqSIdQZxX2zsQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_q2IcsCKFEeqSIdQZxX2zsQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_q2LgACKFEeqSIdQZxX2zsQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_q2OjUCKFEeqSIdQZxX2zsQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_q2Tb0CKFEeqSIdQZxX2zsQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_q2XtQCKFEeqSIdQZxX2zsQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_q2awkCKFEeqSIdQZxX2zsQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_5KDwICKXEeqSIdQZxX2zsQ" name="/Service1/resourcePath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Cr4EoCKYEeqSIdQZxX2zsQ" name="/Service1/httpClient" type="http:HttpClientConfiguration" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Opu9wCKYEeqSIdQZxX2zsQ" name="/Service1/host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_RfPyUCKYEeqSIdQZxX2zsQ" name="/Service1/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_baU7YCKYEeqSIdQZxX2zsQ" name="/Service1/maxTotalConnections" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_eckkYCKYEeqSIdQZxX2zsQ" name="/Service1/maxHostConnections" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ltbi4CKYEeqSIdQZxX2zsQ" name="/Service1/idleConnectionTimeoutMilli" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ueqvACKYEeqSIdQZxX2zsQ" name="/Service1/socketTimeoutMilli" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_zjodsCKYEeqSIdQZxX2zsQ" name="/Service1/connectionTimeoutMilli" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2R1wYCKYEeqSIdQZxX2zsQ" name="/Service1/retryCount" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_FNs5cCKeEeqSIdQZxX2zsQ" name="/Service2/resourcePath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_G8KmYCKeEeqSIdQZxX2zsQ" name="/Service2/httpClient" type="http:HttpClientConfiguration" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PACWMCKeEeqSIdQZxX2zsQ" name="/Service2/host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PMBjwCKeEeqSIdQZxX2zsQ" name="/Service2/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PTbMQCKeEeqSIdQZxX2zsQ" name="/Service2/maxTotalConnections" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PZW1ICKeEeqSIdQZxX2zsQ" name="/Service2/maxHostConnections" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PgHkcCKeEeqSIdQZxX2zsQ" name="/Service2/idleConnectionTimeoutMilli" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Pl5cUCKeEeqSIdQZxX2zsQ" name="/Service2/socketTimeoutMilli" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PtAJ4CKeEeqSIdQZxX2zsQ" name="/Service2/connectionTimeoutMilli" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_PyLk0CKeEeqSIdQZxX2zsQ" name="/Service2/retryCount" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="__YMP4CKjEeqSIdQZxX2zsQ" name="/Service/host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_CX-awCKkEeqSIdQZxX2zsQ" name="/Service/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_quF7ACKFEeqSIdQZxX2zsQ" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_quF7ASKFEeqSIdQZxX2zsQ" processName="tibcomodule.module.GetItems"/>
+    <sca:service xmi:id="_onbfwCKhEeqSIdQZxX2zsQ" name="Service">
+      <sca:interface.wsdl xmi:id="_onbfwSKhEeqSIdQZxX2zsQ" interface="http://www.raiffeisen.com/Service/#wsdl.interface(Service)" scaext:wsdlLocation="../Service%20Descriptors/Service.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_t6jtoSKeEeqSIdQZxX2zsQ" name="tibcomodule.module.service2.Service2HttpClientResource" type="http:HttpClientConfiguration">
+  <jndi:configuration xsi:type="http:HttpClientConfiguration" xmi:id="_t6jtoiKeEeqSIdQZxX2zsQ" httpClientVersion="httpcomponents">
+    <substitutionBindings xmi:id="_6llOwCKeEeqSIdQZxX2zsQ" template="maxTotalConnections" propName="/Service2/maxTotalConnections"/>
+    <substitutionBindings xmi:id="_-VbkoCKeEeqSIdQZxX2zsQ" template="maxTotalConnectionsPerHost" propName="/Service2/maxHostConnections"/>
+    <substitutionBindings xmi:id="_FpfBECKfEeqSIdQZxX2zsQ" template="idleConnectionTimeout" propName="/Service2/idleConnectionTimeoutMilli"/>
+    <substitutionBindings xmi:id="_KSwSQCKfEeqSIdQZxX2zsQ" template="retryCount" propName="/Service2/retryCount"/>
+    <tcpDetails xmi:id="_t6jtoyKeEeqSIdQZxX2zsQ">
+      <substitutionBindings xmi:id="_49ZI8CKeEeqSIdQZxX2zsQ" template="host" propName="/Service2/host"/>
+      <substitutionBindings xmi:id="_8E7hoCKeEeqSIdQZxX2zsQ" template="port" propName="/Service2/port"/>
+      <substitutionBindings xmi:id="_He1ZICKfEeqSIdQZxX2zsQ" template="soTimeout" propName="/Service2/socketTimeoutMilli"/>
+      <substitutionBindings xmi:id="_Iq15QCKfEeqSIdQZxX2zsQ" template="connectionTimeout" propName="/Service2/connectionTimeoutMilli"/>
+    </tcpDetails>
+  </jndi:configuration>
+</jndi:namedResource>

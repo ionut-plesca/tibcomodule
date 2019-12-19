@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.raiffeisen.com/Schema2" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:srv2="http://www.raiffeisen.com/Schema2">
+
+    <complexType name="Service2RequestType">
+    	<sequence>
+    		<element name="element" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Service2ResponseType">
+    	<sequence>
+    		<element name="item" type="string" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Service2Request" type="srv2:Service2RequestType"></element>
+
+    <element name="Service2Response" type="srv2:Service2ResponseType"></element>
+</schema>
