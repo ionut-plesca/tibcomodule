@@ -795,6 +795,17 @@
             <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[25, -1, -89, 0]$[90, 0, -24, 1]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.5/@activity/@activities.1/@activity/@activity/@links/@children.2"/>
+            <bendpoints points="[25, 4, -122, -20]$[135, 22, -12, -2]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <bpws:import importType="http://schemas.xmlsoap.org/wsdl/"
         location="../../../Service%20Descriptors/Service.wsdl" namespace="http://www.raiffeisen.com/Service/"/>
@@ -983,6 +994,8 @@
                                     name="CallService1ToAssign" tibex:linkType="SUCCESS"/>
                                     <bpws:link
                                     name="GroupStartToCallService1" tibex:linkType="SUCCESS"/>
+                                    <bpws:link
+                                    name="AssignResponseToGroupEnd" tibex:linkType="SUCCESS"/>
                                 </bpws:links>
                                 <bpws:assign name="GroupStart"
                                     tibex:group="groupStart"
@@ -996,7 +1009,11 @@
                                     </bpws:copy>
                                 </bpws:assign>
                                 <bpws:empty name="GroupEnd"
-                                    tibex:group="groupEnd" tibex:xpdlId="0b509ae9-db6f-45ae-86fa-03e48ddd50d3"/>
+                                    tibex:group="groupEnd" tibex:xpdlId="0b509ae9-db6f-45ae-86fa-03e48ddd50d3">
+                                    <bpws:targets>
+                                    <bpws:target linkName="AssignResponseToGroupEnd"/>
+                                    </bpws:targets>
+                                </bpws:empty>
                                 <bpws:extensionActivity>
                                     <tibex:extActivity
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:srv1=&quot;http://www.raiffeisen.com/Schema1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;currentItem&quot;/>&lt;xsl:template name=&quot;CallService1-input&quot; match=&quot;/&quot;>&lt;srv1:Service1Request>&lt;srv1:item>&lt;xsl:value-of select=&quot;$currentItem&quot;/>&lt;/srv1:item>&lt;/srv1:Service1Request>&lt;/xsl:template>&lt;/xsl:stylesheet>"
@@ -1031,6 +1048,9 @@
                                     <bpws:targets>
                                     <bpws:target linkName="CallService1ToAssign"/>
                                     </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="AssignResponseToGroupEnd"/>
+                                    </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:srv=&quot;http://www.raiffeisen.com/Service&quot; xmlns:srv1=&quot;http://www.raiffeisen.com/Schema1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Response&quot;/>&lt;xsl:param name=&quot;currentItem&quot;/>&lt;xsl:param name=&quot;CallService1&quot;/>&lt;xsl:template name=&quot;Response&quot; match=&quot;/&quot;>&lt;srv:ServiceResponse>&lt;srv:items>&lt;xsl:copy-of select=&quot;$Response/srv:items/srv:item&quot;/>&lt;srv:item>&lt;srv:value>&lt;xsl:value-of select=&quot;$currentItem&quot;/>&lt;/srv:value>&lt;srv:attributes>&lt;xsl:copy-of select=&quot;$CallService1/srv1:attributes/srv1:Attribute&quot;/>&lt;/srv:attributes>&lt;/srv:item>&lt;/srv:items>&lt;/srv:ServiceResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
